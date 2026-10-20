@@ -1,7 +1,7 @@
 name: Update NASA FIRMS hotspots TMS
 on:
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '17 */6 * * *'
   workflow_dispatch:
 permissions:
   contents: write
