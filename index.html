@@ -22,7 +22,7 @@ async function refresh(){
    let j=await r.json();
    if(!Array.isArray(j.hotspots))throw Error('Format JSON tidak memiliki array hotspots');
    all=j.hotspots;
-   $('updated').textContent='Pembaruan: '+(j.updated_at||'tidak tercantum');
+   $('updated').textContent='Pembaruan terakhir: '+(j.updated_at ? new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(j.updated_at)).replace(' pukul ', ', ')+' WIB' : 'tidak tercantum');
    render();
    $('status').textContent += i?' (sumber sementara: GitHub raw; periksa penerbitan GitHub Pages)':'';
    return;
